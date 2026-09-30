@@ -1,0 +1,173 @@
+{
+  "dataset": [
+    "the cat sat on the mat",
+    "the cat sat on the rug",
+    "the dog sat on the mat",
+    "the dog ran to the park",
+    "the cat ran to the park",
+    "the dog sat on the rug"
+  ],
+  "first_order": {
+    "normalization_passed": true,
+    "normalization_sums": {
+      "<START>": 1.0,
+      "the": 1.0,
+      "cat": 1.0,
+      "sat": 1.0,
+      "on": 1.0,
+      "mat": 1.0,
+      "rug": 1.0,
+      "dog": 1.0,
+      "ran": 1.0,
+      "to": 1.0,
+      "park": 1.0
+    },
+    "target_cpts": {
+      "the": {
+        "cat": 0.25,
+        "mat": 0.16666666666666666,
+        "rug": 0.16666666666666666,
+        "dog": 0.25,
+        "park": 0.16666666666666666
+      },
+      "cat": {
+        "sat": 0.6666666666666666,
+        "ran": 0.3333333333333333
+      },
+      "dog": {
+        "sat": 0.6666666666666666,
+        "ran": 0.3333333333333333
+      },
+      "sat": {
+        "on": 1.0
+      },
+      "ran": {
+        "to": 1.0
+      }
+    },
+    "greedy_sentence": "<START> the cat sat on the cat sat on the cat sat on the cat",
+    "sampled_sentences": [
+      "<START> the cat sat on the dog ran to the cat sat on the cat sat on the dog ran to the dog sat on the mat <END>",
+      "<START> the park <END>",
+      "<START> the dog sat on the rug <END>",
+      "<START> the park <END>",
+      "<START> the cat sat on the cat sat on the mat <END>",
+      "<START> the mat <END>",
+      "<START> the dog sat on the mat <END>",
+      "<START> the rug <END>",
+      "<START> the dog sat on the mat <END>",
+      "<START> the park <END>",
+      "<START> the mat <END>",
+      "<START> the mat <END>",
+      "<START> the mat <END>",
+      "<START> the mat <END>",
+      "<START> the rug <END>",
+      "<START> the cat sat on the cat sat on the park <END>",
+      "<START> the dog ran to the dog sat on the park <END>",
+      "<START> the rug <END>",
+      "<START> the park <END>",
+      "<START> the dog sat on the dog sat on the cat ran to the mat <END>"
+    ]
+  },
+  "second_order": {
+    "normalization_passed": true,
+    "normalization_sums": {
+      "('<START>', 'the')": 1.0,
+      "('the', 'cat')": 1.0,
+      "('cat', 'sat')": 1.0,
+      "('sat', 'on')": 1.0,
+      "('on', 'the')": 1.0,
+      "('the', 'mat')": 1.0,
+      "('the', 'rug')": 1.0,
+      "('the', 'dog')": 1.0,
+      "('dog', 'sat')": 1.0,
+      "('dog', 'ran')": 1.0,
+      "('ran', 'to')": 1.0,
+      "('to', 'the')": 1.0,
+      "('the', 'park')": 1.0,
+      "('cat', 'ran')": 1.0
+    },
+    "all_cpts": {
+      "('<START>', 'the')": {
+        "cat": 0.5,
+        "dog": 0.5
+      },
+      "('the', 'cat')": {
+        "sat": 0.6666666666666666,
+        "ran": 0.3333333333333333
+      },
+      "('cat', 'sat')": {
+        "on": 1.0
+      },
+      "('sat', 'on')": {
+        "the": 1.0
+      },
+      "('on', 'the')": {
+        "mat": 0.5,
+        "rug": 0.5
+      },
+      "('the', 'mat')": {
+        "<END>": 1.0
+      },
+      "('the', 'rug')": {
+        "<END>": 1.0
+      },
+      "('the', 'dog')": {
+        "sat": 0.6666666666666666,
+        "ran": 0.3333333333333333
+      },
+      "('dog', 'sat')": {
+        "on": 1.0
+      },
+      "('dog', 'ran')": {
+        "to": 1.0
+      },
+      "('ran', 'to')": {
+        "the": 1.0
+      },
+      "('to', 'the')": {
+        "park": 1.0
+      },
+      "('the', 'park')": {
+        "<END>": 1.0
+      },
+      "('cat', 'ran')": {
+        "to": 1.0
+      }
+    },
+    "greedy_sentence": "<START> the cat sat on the mat <END>",
+    "sampled_sentences": [
+      "<START> the dog sat on the rug <END>",
+      "<START> the dog sat on the mat <END>",
+      "<START> the cat sat on the mat <END>",
+      "<START> the dog sat on the mat <END>",
+      "<START> the dog sat on the rug <END>",
+      "<START> the dog ran to the park <END>",
+      "<START> the dog sat on the rug <END>",
+      "<START> the cat sat on the mat <END>",
+      "<START> the dog sat on the mat <END>",
+      "<START> the dog sat on the mat <END>",
+      "<START> the dog sat on the rug <END>",
+      "<START> the cat sat on the mat <END>",
+      "<START> the dog sat on the rug <END>",
+      "<START> the cat sat on the rug <END>",
+      "<START> the cat sat on the mat <END>",
+      "<START> the cat sat on the mat <END>",
+      "<START> the dog sat on the mat <END>",
+      "<START> the dog sat on the mat <END>",
+      "<START> the cat ran to the park <END>",
+      "<START> the dog ran to the park <END>"
+    ]
+  },
+  "comparison_metrics": {
+    "vocabulary_size": 12,
+    "num_params_1st": 17,
+    "num_params_2nd": 18,
+    "observed_contexts_1st": 11,
+    "observed_contexts_2nd": 14,
+    "zero_prob_contexts_1st": 1,
+    "zero_prob_contexts_2nd": 130,
+    "unique_sampled_sents_1st": 10,
+    "unique_sampled_sents_2nd": 6
+  }
+}
