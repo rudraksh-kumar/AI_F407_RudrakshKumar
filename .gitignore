@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+<<<<<<< HEAD
+README.md
+=======
+.DS_Store
+.idea/
+.vscode/
+submission.zip
+>>>>>>> 236a6cd8e729e656288e77a94b0e864943914387
